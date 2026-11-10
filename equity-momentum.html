@@ -94,6 +94,17 @@
   details .body h4 { color: var(--ink); font-size: 14.5px; margin: 14px 0 6px; }
   .rules td:first-child { font-weight: 600; color: var(--ink); width: 110px; }
   .rules td { white-space: normal; vertical-align: top; }
+  .cta { display: flex; align-items: center; gap: 16px; text-decoration: none; color: #fff; border-radius: 14px; padding: 18px 20px; margin: 4px 0 24px;
+         background: linear-gradient(120deg, #1f3a68 0%, #2a5bb0 55%, #2a78d6 100%); box-shadow: 0 6px 22px rgba(31, 58, 104, .28); transition: transform .15s ease, box-shadow .15s ease; }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(31, 58, 104, .38); }
+  .cta:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .cta .cta-text { flex: 1; min-width: 0; }
+  .cta .cta-kicker { font-size: 12px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; opacity: .85; }
+  .cta .cta-title { font-size: clamp(18px, 3.6vw, 22px); font-weight: 800; line-height: 1.25; margin: 2px 0 4px; }
+  .cta .cta-sub { font-size: 14px; opacity: .92; line-height: 1.45; }
+  .cta .cta-btn { flex: none; background: #fff; color: #1f3a68; font-weight: 800; font-size: 15px; border-radius: 10px; padding: 11px 16px; white-space: nowrap; }
+  .cta.bottom { margin: 8px 0 18px; }
+  @media (max-width: 600px) { .cta { flex-direction: column; align-items: stretch; } .cta .cta-btn { text-align: center; } }
   .foot { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
   .foot a { font-weight: 600; }
 </style>
@@ -105,13 +116,30 @@
   <p class="lead">I backtested 26 momentum strategies on Indian stocks and ETFs, with real trading costs, Indian tax and delisted companies included. These are the four that matter, ranked by return for each unit of risk. Pick one to see how it works, what it holds today and how it did.</p>
   <div class="strip" id="strip"></div>
 
+  <a class="cta" href="equity-momentum-full.html">
+    <span class="cta-text">
+      <span class="cta-kicker">For the deep dive</span>
+      <span class="cta-title" style="display:block">See the full analysis: all 26 strategies</span>
+      <span class="cta-sub" style="display:block">The complete research dashboard: every strategy and variant side by side, rejected ones included, against Nifty 50 and Nifty 500, with a month-by-month audit of every trade.</span>
+    </span>
+    <span class="cta-btn">Open full analysis &rarr;</span>
+  </a>
+
   <p class="picker-label">Choose a strategy</p>
   <div class="cards" id="cards" role="group" aria-label="Strategies"></div>
 
   <div id="detail" aria-live="polite"></div>
 
+  <a class="cta bottom" href="equity-momentum-full.html">
+    <span class="cta-text">
+      <span class="cta-kicker">Want every detail?</span>
+      <span class="cta-title" style="display:block">See the full analysis: all 26 strategies</span>
+      <span class="cta-sub" style="display:block">The complete research dashboard: every strategy and variant side by side, rejected ones included, against Nifty 50 and Nifty 500, with a month-by-month audit of every trade.</span>
+    </span>
+    <span class="cta-btn">Open full analysis &rarr;</span>
+  </a>
+
   <div class="foot">
-    <p><a href="equity-momentum-full.html">See all 26 strategies in the full research dashboard &rarr;</a></p>
     <p>All figures are backtests on historical data, not live trading results. Returns are after trading costs; "after tax" also deducts Indian capital-gains tax. A month-by-month audit of every trade is linked inside each strategy.</p>
   </div>
 </main>
